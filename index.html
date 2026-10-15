@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>تحدي الـ 30 يومًا | صناع الأثر الرقمي</title>
+<meta name="description" content="لوحة متابعة تحدي الـ 30 يومًا — 30 يومًا × 30 فيديو ريلز × 30 فكرة مبتكرة بأثر حقيقي. مبادرة مؤسسة المرقاة للتعليم والتدريب.">
+<meta name="theme-color" content="#0F2C66">
+<link rel="icon" type="image/png" href="assets/logo-navy.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="nav"></div>
+
+<main class="wrap">
+  <!-- ======================= الهيرو ======================= -->
+  <section class="hero">
+    <div class="hero-txt">
+      <span class="eyebrow">🚀 مبادرة مؤسسة المرقاة للتعليم والتدريب</span>
+      <h1>تحدي الـ 30 يومًا<br><em>اصنع أثرك الرقمي</em></h1>
+      <div class="formula"><span>30 يومًا</span><i>×</i><span>30 ريلز</span><i>×</i><span>30 فكرة مبتكرة</span></div>
+      <p class="lead">شهر واحد من الالتزام لصناعة فارق حقيقي. انشر كل يوم، شاهد ترتيبك يتقدم، وكن أحد الفائزين الخمسة.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="register.html">✨ انضم إلى التحدي</a>
+        <button class="btn ghost" id="openSubmit" type="button">🎬 أرسل ريلز اليوم</button>
+      </div>
+      <div class="status-pill" id="statusPill"><span class="dot"></span><span>جارٍ التحميل…</span></div>
+    </div>
+
+    <div class="scene" aria-hidden="true">
+      <div class="stage" id="stage">
+        <div class="floor"></div>
+        <div class="ring3d"></div>
+        <div class="plate"><div class="logo"><img src="assets/logo-navy.png" alt=""></div></div>
+        <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+        <div class="chip3d a">🎬 <span id="chipReels">0</span> ريلز</div>
+        <div class="chip3d b">👥 <span id="chipPeople">0</span> مشارك</div>
+        <div class="chip3d c">🏆 100$ × 5 فائزين</div>
+        <div class="disc">
+          <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="#E2E9F6" stroke-width="8"/><circle id="ringArc" cx="50" cy="50" r="44" fill="none" stroke="url(#rg)" stroke-width="8" stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="276.46" style="transition:stroke-dashoffset 1.4s cubic-bezier(.2,.8,.2,1)"/>
+            <defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7FB0FF"/><stop offset="1" stop-color="#0F2C66"/></linearGradient></defs></svg>
+          <div class="t"><small id="discLbl">اليوم</small><b id="discNum">–</b><span id="discSub"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-live="off"><div class="ticker-in" id="ticker"></div></div>
+
+  <!-- ======================= الإحصاءات ======================= -->
+  <section class="stats" id="stats">
+    <div class="card3d stat" data-tilt="6"><div class="ico">👥</div><div><b data-k="people">0</b><span>مشارك معتمد</span></div></div>
+    <div class="card3d stat" data-tilt="6"><div class="ico">🎬</div><div><b data-k="reels">0</b><span>ريلز تم اعتماده</span></div></div>
+    <div class="card3d stat" data-tilt="6"><div class="ico">🔥</div><div><b data-k="streaks">0</b><span>في سلسلة متتالية</span></div></div>
+    <div class="card3d stat" data-tilt="6"><div class="ico">⏳</div><div><b data-k="left">0</b><span>يوم متبقٍ</span></div></div>
+  </section>
+
+  <!-- ======================= اليوم ======================= -->
+  <section class="sec" style="padding-top:36px">
+    <div class="card3d today-card" data-tilt="3">
+      <div style="flex:1 1 320px">
+        <span class="eyebrow">📅 إنجازات اليوم</span>
+        <h3 id="todayTitle">من نشر اليوم؟</h3>
+        <p id="todaySub">—</p>
+        <div class="avatar-stack" id="todayStack"></div>
+      </div>
+      <button class="btn gold" id="openSubmit2" type="button">🎬 سجّل إنجاز اليوم</button>
+    </div>
+  </section>
+
+  <!-- ======================= منصة التتويج ======================= -->
+  <section class="sec" id="top">
+    <div class="sec-h"><div><span class="eyebrow">🏆 المتصدرون</span><h2>منصة التتويج</h2><p>الترتيب يعتمد على عدد الأيام المنجزة ثم السلسلة المتتالية.</p></div></div>
+    <div class="podium-wrap"><div class="podium" id="podium"></div></div>
+    <div class="prize-strip">
+      <div class="card3d prize-box" data-tilt="4"><div class="big" id="prizeCash">100$</div><div><b>مكافأة مالية لكل فائز</b><span>تُمنح لكل واحد من الفائزين الخمسة الأوائل.</span></div></div>
+      <div class="card3d prize-box" data-tilt="4"><div class="big">🎥</div><div><b>عضوية استوديو النقاء</b><span>ساعات استخدام مجانية للتصوير ومعدات الاستوديو.</span></div></div>
+    </div>
+    <p class="note"><span>ℹ️</span><span>الترتيب هنا يعكس الالتزام فقط. يحدد الفائزين النهائيين بعد تقييم الالتزام وأصالة الفكرة وجودة الإنتاج.</span></p>
+  </section>
+
+  <!-- ======================= لوحة الترتيب ======================= -->
+  <section class="sec" id="board">
+    <div class="sec-h"><div><span class="eyebrow">📊 المتابعة الحية</span><h2>لوحة المشاركين</h2><p>كل مربع يمثل يومًا. المربع الأزرق يعني يوم منجز، والذهبي هو اليوم.</p></div></div>
+    <div class="toolbar">
+      <label class="search"><span class="sr">بحث</span><input id="q" type="search" placeholder="ابحث بالاسم أو الحساب أو التخصص…" autocomplete="off"><i>🔍</i></label>
+      <select class="select" id="jobF" aria-label="التخصص"><option value="">كل التخصصات</option></select>
+      <select class="select" id="sortF" aria-label="الترتيب">
+        <option value="rank">الترتيب العام</option><option value="streak">الأطول سلسلة 🔥</option><option value="today">أنجزوا اليوم</option><option value="new">الأحدث انضمامًا</option>
+      </select>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="more-row"><button class="btn ghost" id="moreBtn" type="button" hidden>عرض المزيد</button></div>
+  </section>
+
+  <!-- ======================= كيف تشارك ======================= -->
+  <section class="sec" id="how">
+    <div class="sec-h"><div><span class="eyebrow">🧭 آلية المشاركة</span><h2>ثلاث خطوات يوميًا</h2></div></div>
+    <div class="cols3" style="margin-top:26px">
+      <div class="card3d step" data-tilt="7"><div class="num">1</div><h3>صناعة المقطع</h3><p>أعدّ مقطع ريلز قصيرًا بفكرة مبتكرة وقيمة نافعة.</p></div>
+      <div class="card3d step" data-tilt="7"><div class="num">2</div><h3>النشر الشخصي</h3><p>انشر المقطع يوميًا على حسابك الشخصي في إنستغرام.</p></div>
+      <div class="card3d step" data-tilt="7"><div class="num">3</div><h3>خاصية Collaboration</h3><p>أرسل دعوة مشاركة مع حساب <b>@sonna3athr</b>، ثم سجّل رابط الريلز هنا ليعتمده المشرف.</p></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><div><span class="eyebrow">🎯 معايير التنافس</span><h2>كيف تضمن الفوز؟</h2></div></div>
+    <div class="cols3">
+      <div class="card3d step" data-tilt="7"><h3 style="margin-top:0">⏱️ الالتزام الصارم</h3><p>نشر مقطع واحد يوميًا طيلة الـ 30 يومًا دون انقطاع.</p></div>
+      <div class="card3d step" data-tilt="7"><h3 style="margin-top:0">💡 أصالة الفكرة</h3><p>أفكار مبتكرة ومتجددة وذات أثر مجتمعي نافع.</p></div>
+      <div class="card3d step" data-tilt="7"><h3 style="margin-top:0">🎥 جودة الإنتاج</h3><p>وضوح الصوت، وجودة التصوير، والأسلوب الممتع.</p></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><div><span class="eyebrow">🎖️ الشارات</span><h2>اجمع الشارات</h2><p>كل إنجاز يفتح لك شارة جديدة تظهر على بطاقتك.</p></div></div>
+    <div class="badge-legend" id="legend"></div>
+  </section>
+</main>
+
+<div id="foot"></div>
+
+<!-- ======================= نافذة المشارك ======================= -->
+<div class="modal" id="pModal" role="dialog" aria-modal="true" aria-label="تفاصيل المشارك"><div class="dialog" id="pBody"></div></div>
+
+<!-- ======================= نافذة إرسال ريلز ======================= -->
+<div class="modal" id="sModal" role="dialog" aria-modal="true" aria-label="إرسال ريلز">
+  <div class="dialog">
+    <button class="x" data-close type="button" aria-label="إغلاق">✕</button>
+    <h3>🎬 سجّل إنجاز اليوم</h3>
+    <p class="sub">الصق رابط الريلز الذي نشرته، وسيعتمده المشرف خلال وقت قصير.</p>
+    <form id="sForm" novalidate>
+      <div id="sMsg"></div>
+      <div class="field"><label for="sWho">أنت من؟</label><select class="select" id="sWho" required></select></div>
+      <div class="field"><label for="sDay">اليوم</label><select class="select" id="sDay"></select></div>
+      <div class="field"><label for="sUrl">رابط الريلز</label><input class="input input-ltr" id="sUrl" inputmode="url" placeholder="https://www.instagram.com/reel/..." required><div class="hint">انسخ الرابط من إنستغرام: ⋯ ← نسخ الرابط.</div></div>
+      <button class="btn primary" style="width:100%" id="sBtn" type="submit">إرسال للاعتماد</button>
+    </form>
+  </div>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/student.js"></script>
+</body>
+</html>

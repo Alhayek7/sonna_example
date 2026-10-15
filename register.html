@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>التسجيل في التحدي | صناع الأثر الرقمي</title>
+<meta name="theme-color" content="#0F2C66">
+<link rel="icon" type="image/png" href="assets/logo-navy.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="nav"></div>
+<main class="wrap">
+  <div class="reg">
+    <section class="card3d reg-form" id="formCard">
+      <span class="eyebrow">✨ انضم إلى الأبطال</span>
+      <h1 style="font-size:clamp(28px,4vw,38px);color:var(--navy);font-weight:900;line-height:1.2;margin-bottom:6px">سجّل في تحدي الـ 30 يومًا</h1>
+      <p style="color:var(--muted);margin-bottom:22px">أدخل بياناتك مرة واحدة. بعد مراجعة الإدارة سيظهر اسمك في لوحة المتصدرين.</p>
+      <div id="closed" class="alert err" hidden>التسجيل مغلق حاليًا.</div>
+      <form id="form" novalidate autocomplete="on">
+        <div id="msg"></div>
+        <div class="field">
+          <label>صورتك الشخصية</label>
+          <label class="photo-pick" for="photo">
+            <span class="pv" id="pv">📷</span>
+            <span><b>اضغط لاختيار صورة</b><span>تُقصّ تلقائيًا بشكل مربع وتُضغط قبل الرفع.</span></span>
+          </label>
+          <input id="photo" type="file" accept="image/*" class="sr">
+          <div class="err" id="eph"></div>
+        </div>
+        <div class="field"><label for="name">الاسم الكامل</label><input class="input" id="name" maxlength="80" placeholder="مثال: ليان الحايك" autocomplete="name" required><div class="err" id="enm"></div></div>
+        <div class="field"><label for="ig">حساب إنستغرام</label><div class="ig-in"><span>@</span><input class="input" id="ig" maxlength="80" placeholder="username أو رابط الحساب" autocapitalize="none" autocorrect="off" spellcheck="false" required></div><div class="hint">الحساب الذي ستنشر عليه الريلز يوميًا.</div><div class="err" id="eig"></div></div>
+        <div class="field"><label for="job">التخصص الوظيفي</label><input class="input" id="job" maxlength="80" list="jobs" placeholder="مثال: مصمم جرافيك" required><datalist id="jobs"><option>مصمم جرافيك</option><option>صانع محتوى</option><option>مونتير فيديو</option><option>مصور</option><option>مسوّق رقمي</option><option>كاتب محتوى</option><option>مطوّر</option><option>مدرّب</option><option>طالب</option></datalist><div class="err" id="ejb"></div></div>
+        <input id="hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
+        <button class="btn primary" style="width:100%;margin-top:6px" id="btn" type="submit">🚀 أرسل طلب التسجيل</button>
+      </form>
+    </section>
+
+    <aside id="side">
+      <div class="card3d preview-card" data-tilt="6">
+        <span class="eyebrow">👀 معاينة بطاقتك</span>
+        <div class="pav"><svg viewBox="0 0 100 100" style="position:absolute;inset:-6px;width:calc(100% + 12px);height:calc(100% + 12px);transform:rotate(-90deg)"><circle cx="50" cy="50" r="46" fill="none" stroke="#E2E9F6" stroke-width="5"/></svg><img id="pvImg" src="assets/logo-navy.png" alt="" style="object-fit:contain;padding:14px"></div>
+        <h3 id="pvName">اسمك هنا</h3>
+        <div class="jb" id="pvJob">تخصصك الوظيفي</div>
+        <div class="ig" id="pvIg">@username</div><br>
+        <span class="tag">0 / 30 يوم · بانتظار الانطلاق</span>
+        <div class="reg-points">
+          <div>✅ <span>بعد الموافقة تظهر بطاقتك أمام جميع المشاركين.</span></div>
+          <div>🎬 <span>تسجّل رابط ريلز كل يوم من الصفحة الرئيسية.</span></div>
+          <div>🔥 <span>حافظ على السلسلة لتحصد الشارات وتتصدر الترتيب.</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+<div id="foot"></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/register.js"></script>
+</body>
+</html>
